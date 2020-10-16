@@ -7,14 +7,6 @@ function Home(){
     return (
         <div>
             <h1>Home</h1>
-            <button
-                onClick={() => {
-                    history.push("login");
-                    //history.goBack(); volta para a página anterior
-                }}
-            >
-                Logout
-            </button>
         </div>
     );
 }

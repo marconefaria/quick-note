@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 import Cadastro from "./pages/Cadastro";
 import Home from "./pages/Home";
@@ -10,12 +10,22 @@ function Routes(){
     return(
         <BrowserRouter>
             <Switch>
-                <Route path="/login" component={Login} />
-                <Route path="/home" component={Home} />
-                <Route path="/cadastro" component={Cadastro} />
-                <Route path="/temp" component={Menu} />
+                <Route exact path="/login" component={Login} />
+                <Route path="/" component={userMenu} />
+                <Route exact path="/cadastro" component={Cadastro} />
             </Switch>
         </BrowserRouter> 
+    );
+}
+
+function userMenu(){
+    return (
+        <Menu>
+            <Switch>
+                <Route path="/home" component={Home} />
+                <Route path="/home" component={() => <Redirect to="/login"/>} />
+            </Switch>
+        </Menu>
     );
 }
 
