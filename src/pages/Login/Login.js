@@ -35,6 +35,7 @@ function Login(){
                         <Button variant="primary" onClick = {login}>Login</Button>
                     </Form>
                     <style>@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');</style>
+                    
                 </div>
             </div>
         </div>
